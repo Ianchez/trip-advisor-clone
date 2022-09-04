@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator, BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { useFonts } from 'expo-font';
+import { iconsDictionary } from './src/utils/icons';
+import loadFonts from './src/utils/fonts';
 
 import {
   ExploreScreen,
@@ -11,7 +12,6 @@ import {
   PlanScreen,
   ReviewScreen
 } from './src/screens';
-import { iconsDictionary } from './src/utils/icons';
 
 type ScreenOptionProps = {
   route: {
@@ -31,7 +31,7 @@ const getGeneralOptions = ({ route }: ScreenOptionProps): BottomTabNavigationOpt
     tabBarActiveTintColor: 'black',
     tabBarInactiveTintColor: 'gray',
     tabBarLabelStyle: {
-      fontWeight: '600',
+      fontWeight: '500',
       fontFamily: 'Trip Sans, Arial',
       paddingBottom: 4,
     }
@@ -41,11 +41,9 @@ const getGeneralOptions = ({ route }: ScreenOptionProps): BottomTabNavigationOpt
 const Tab = createBottomTabNavigator();
 
 export default function App() {
-  const [loadedFont] = useFonts({
-    TripSans: require('./assets/fonts/TripSans-Regular.ttf'),
-  });
-
-  if (!loadedFont) return null;
+  useEffect(() => {
+    loadFonts();
+  }, []);
 
   return (
     <NavigationContainer>
