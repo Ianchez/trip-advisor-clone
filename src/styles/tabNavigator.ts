@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
+const tabStyles = StyleSheet.create({
   selectedTab: {
     position: 'absolute',
     top: 0,
@@ -14,4 +14,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default styles;
+export default tabStyles;
