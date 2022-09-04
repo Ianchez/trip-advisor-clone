@@ -1,20 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import ScreenTitle from '../components/ScreenTitle';
+import screenStyles from '../styles/screen';
 
 const PlanScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text>Plan Screen</Text>
+    <View style={screenStyles.container}>
+      <ScreenTitle title='Plan'/>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default PlanScreen;

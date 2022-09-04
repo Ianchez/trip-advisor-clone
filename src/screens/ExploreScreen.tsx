@@ -1,20 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import ScreenTitle from '../components/ScreenTitle';
+import screenStyles from '../styles/screen';
 
 const ExploreScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text>Explore Screen</Text>
+    <View style={screenStyles.container}>
+      <ScreenTitle title='Explore'/>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default ExploreScreen;

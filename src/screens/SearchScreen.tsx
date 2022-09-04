@@ -1,20 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import InputField from '../components/InputField';
+import ScreenTitle from '../components/ScreenTitle';
+import screenStyles from '../styles/screen';
 
 const SearchScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text>Search Screen</Text>
+    <View style={screenStyles.container}>
+      <ScreenTitle title='Search'/>
+      <InputField placeholder='Where to?' icon={'search'}/>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default SearchScreen;

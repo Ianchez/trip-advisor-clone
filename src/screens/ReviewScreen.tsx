@@ -1,20 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import ScreenTitle from '../components/ScreenTitle';
+import screenStyles from '../styles/screen';
 
 const ReviewScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text>Review Screen</Text>
+    <View style={screenStyles.container}>
+      <ScreenTitle title='Review'/>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default ReviewScreen;

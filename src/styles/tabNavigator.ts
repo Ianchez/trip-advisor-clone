@@ -5,7 +5,8 @@ const tabStyles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     borderTopWidth: 3,
-    borderTopColor: 'black',
+    borderTopColor: '#35bd60',
+    paddingTop: 1,
   },
   tabBarLabel: {
     fontWeight: '500',

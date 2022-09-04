@@ -39,7 +39,7 @@ const getGeneralOptions = ({ route }: ScreenOptionProps): BottomTabNavigationOpt
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => (
-  <Tab.Navigator initialRouteName="Explore" screenOptions={getGeneralOptions}>
+  <Tab.Navigator initialRouteName="Search" screenOptions={getGeneralOptions}>
     <Tab.Screen name="Explore" component={ExploreScreen} />
     <Tab.Screen name="Search" component={SearchScreen} />
     <Tab.Screen name="Plan" component={PlanScreen} />
