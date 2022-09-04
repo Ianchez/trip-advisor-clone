@@ -3,37 +3,50 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator, BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { useFonts } from 'expo-font';
+
 import {
   ExploreScreen,
   SearchScreen,
   PlanScreen,
   ReviewScreen
 } from './src/screens';
+import { iconsDictionary } from './src/utils/icons';
 
-const getGeneralOptions = ({ route }): BottomTabNavigationOptions  => ({
-  headerShown: false,
-  tabBarIcon: ({ focused }) => {
-    let iconName;
-
-    if (route.name === 'Explore') {
-      iconName = 'home';
-    } else if (route.name === 'Search') {
-      iconName = 'search';
-    } else if (route.name === 'Plan') {
-      iconName = 'favorite-border';
-    } else if (route.name === 'Review') {
-      iconName = 'edit';
-    }
-
-    return <Icon name={iconName} size={26} color={focused ? 'black' : 'gray'} />;
+type ScreenOptionProps = {
+  route: {
+    name: string;
   },
-  tabBarActiveTintColor: 'black',
-  tabBarInactiveTintColor: 'gray',
-});
+  navigation: any;
+}
+
+const getGeneralOptions = ({ route }: ScreenOptionProps): BottomTabNavigationOptions  => {
+  return {
+    headerShown: false,
+    tabBarIcon: ({ focused }) => {
+      const iconName = iconsDictionary[route.name];
+
+      return <Icon name={iconName} size={26} color={focused ? 'black' : 'gray'} />;
+    },
+    tabBarActiveTintColor: 'black',
+    tabBarInactiveTintColor: 'gray',
+    tabBarLabelStyle: {
+      fontWeight: '600',
+      fontFamily: 'Trip Sans, Arial',
+      paddingBottom: 4,
+    }
+  }
+};
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  const [loadedFont] = useFonts({
+    TripSans: require('./assets/fonts/TripSans-Regular.ttf'),
+  });
+
+  if (!loadedFont) return null;
+
   return (
     <NavigationContainer>
       <Tab.Navigator initialRouteName="Explore" screenOptions={getGeneralOptions}>
