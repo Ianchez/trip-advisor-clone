@@ -13,17 +13,17 @@ type Props = {
 const PlacesSection: React.FC<Props> = ({ placesList, sectionTitle }) => {
   return (
     <>
-      <View style={styles.subSectionHeader}>
+      <View style={styles.header}>
         <Text style={screenStyles.subSectionText}>{sectionTitle}</Text>
-        <Text style={styles.subSectionSeeAllText}>See all</Text>
+        <Text style={styles.seeAllText}>See all</Text>
       </View>
       {placesList.map((place, index) =>
         <>
-          <TouchableOpacity style={styles.subSectionItem}>
-            <View style={styles.subSectionItemImg}>
+          <TouchableOpacity style={styles.item}>
+            <View style={styles.itemImg}>
               <Image
                 source={{ uri: place.imgURI }}
-                style={styles.subSectionItemImg}
+                style={styles.itemImg}
               />
               <TouchableOpacity style={styles.favPlaceButton}>
                 <Icon
@@ -34,16 +34,25 @@ const PlacesSection: React.FC<Props> = ({ placesList, sectionTitle }) => {
                 />
               </TouchableOpacity>
             </View>
-            <View style={styles.subSectionItemDetail}>
-              <Text style={styles.subSectionItemDetailTitle}>{place.title}</Text>
+            <View style={styles.itemDetail}>
+              <Text style={styles.itemDetailTitle}>{place.title}</Text>
               <View style={{ flexDirection: 'row'}}>
-                <RatingCircles rating={place.avgRating} circleSize={12}/>
-                <View style={styles.subSectionItemDetailRatingAndDistance}>
+                {place.avgRating &&
+                  <RatingCircles rating={place.avgRating} circleSize={12}/>
+                }
+                <View style={styles.itemDetailRatingAndDistance}>
                   <Text style={styles.ratingNumber}>{place.reviewsCount}</Text>
-                  <Text style={styles.ratingNumber}>{`${place.distance} km`}</Text>
+                  {place.distance && 
+                    <Text style={styles.ratingNumber}>{`${place.distance} km`}</Text>
+                  }
                 </View>
               </View>
-              <Text style={styles.subSectionItemDetailClasification}>{place.categories.join(' | ')}</Text>
+              {place.categories && 
+                <Text style={styles.itemDetailClassification}>{place.categories.join(' | ')}</Text>
+              }
+              {place.location && 
+                <Text style={styles.itemDetailLocation}>{place.location}</Text>
+              }
             </View>
           </TouchableOpacity>
           {index !== (placesList.length - 1) && // Avoid space at the end
@@ -56,36 +65,36 @@ const PlacesSection: React.FC<Props> = ({ placesList, sectionTitle }) => {
 };
 
 const styles = StyleSheet.create({
-  subSectionHeader: {
+  header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 20,
   },
-  subSectionSeeAllText: {
+  seeAllText: {
     textDecorationLine: 'underline',
     fontSize: 12,
     fontWeight: '500',
     position: 'relative',
     top: 5,
   },
-  subSectionItem: {
+  item: {
     flexDirection: 'row',
   },
-  subSectionItemImg: {
+  itemImg: {
     height: 100,
     width: 100,
     backgroundColor: 'gray',
   },
-  subSectionItemDetail: {
+  itemDetail: {
     flex: 1,
     width: '100%',
     paddingLeft: 16,
   },
-  subSectionItemDetailTitle: {
+  itemDetailTitle: {
     fontSize: 13,
     fontWeight: '500',
   },
-  subSectionItemDetailRatingAndDistance: {
+  itemDetailRatingAndDistance: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -94,7 +103,12 @@ const styles = StyleSheet.create({
   ratingNumber: {
     fontSize: 10, 
   },
-  subSectionItemDetailClasification: {
+  itemDetailClassification: {
+    fontSize: 11,
+    fontWeight: '400',
+  },
+  itemDetailLocation: {
+    marginTop: 4,
     fontSize: 11,
     fontWeight: '400',
   },
