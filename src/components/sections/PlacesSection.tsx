@@ -1,4 +1,4 @@
-import { Image, StyleProp, StyleSheet, Text, TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { iconsDictionary } from './../../utils/icons';
@@ -7,10 +7,7 @@ import RatingCircles from '../RatingCircles';
 
 type Props = {
   placesList: any[],
-  sectionTitle: string,
-  // containerStyle?: StyleProp<ViewStyle>;
-  // pillStyle?: StyleProp<ViewStyle>;
-  // textStyle?: StyleProp<TextStyle>;
+  sectionTitle: string
 }
 
 const PlacesSection: React.FC<Props> = ({ placesList, sectionTitle }) => {
