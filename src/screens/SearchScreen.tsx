@@ -20,6 +20,7 @@ const SearchScreen = () => {
   const attractions = places.filter(place => place.type === 'attraction');
   const barsPubs = places.filter(place => place.type === 'bars&pubs');
   const getaways = places.filter(place => place.type === 'getaway');
+  const destinations = places.filter(place => place.type === 'destination');
 
   const onChangeSearchHandler = (value: string) => setSearchValue(value);
 
@@ -45,7 +46,7 @@ const SearchScreen = () => {
         <View style={styles.doubleSeparation}/>
         <PlacesSection placesList={getaways} sectionTitle='Weekends getaway'/>
         <View style={styles.doubleSeparation}/>
-        <DestinationsSection destinationsList={getaways} sectionTitle='Destinations travelers love' />
+        <DestinationsSection destinationsList={destinations} sectionTitle='Destinations travelers love' />
       </ScrollView>
     </SafeAreaView>
   );

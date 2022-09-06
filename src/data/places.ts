@@ -98,4 +98,28 @@ export const PLACES_INITIAL_STATE = [
     imgURI: 'https://reactjs.org/logo-og.png',
     location: 'Valparaíso Region, Chile'
   },
+  {
+    title: 'New York City',
+    type: 'destination',
+    imgURI: 'https://reactjs.org/logo-og.png',
+    location: 'Valparaíso Region, Chile'
+  },
+  {
+    title: 'Singapore',
+    type: 'destination',
+    imgURI: 'https://reactjs.org/logo-og.png',
+    location: 'Valparaíso Region, Chile'
+  },
+  {
+    title: 'Rome',
+    type: 'destination',
+    imgURI: 'https://reactjs.org/logo-og.png',
+    location: 'Valparaíso Region, Chile'
+  },
+  {
+    title: 'Paris',
+    type: 'destination',
+    imgURI: 'https://reactjs.org/logo-og.png',
+    location: 'Valparaíso Region, Chile'
+  },
 ];
