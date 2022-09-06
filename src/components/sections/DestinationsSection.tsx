@@ -15,7 +15,7 @@ const DestinationsSection: React.FC<Props> = ({ destinationsList, sectionTitle }
       </View>
       <View style={styles.listContainerRow}>
         {destinationsList.map(place =>
-          <TouchableOpacity style={styles.item}>
+          <TouchableOpacity key={place.id} style={styles.item}>
             <Image
               source={{ uri: place.imgURI }}
               style={styles.itemImage}

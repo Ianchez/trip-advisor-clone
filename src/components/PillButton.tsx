@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   pill: {
     height: 48,
     justifyContent: 'center',
+    alignItems: 'center',
     borderWidth: 2,
     borderRadius: 24,
     borderColor: '#e9e9e9',

@@ -11,10 +11,10 @@ const renderCircle = (rating: number, circleSize: number, halfSection: number) =
   const sizeStyle = { height: circleSize, width: circleSize, borderRadius: circleSize / 2 };
   return (
     <View style={[ styles.ratingCircle, rating < halfSection && styles.whiteBackground, sizeStyle ]}>
-      {rating >= halfSection && rating < (Math.ceil(halfSection) - 0.1) && [
-        <View style={[ styles.halfCircle ]}/>,
-        <View style={[ styles.halfCircle, styles.whiteBackground ]}/>,
-      ]}
+      {rating >= halfSection && rating < (Math.ceil(halfSection) - 0.1) && <>
+        <View style={[ styles.halfCircle ]}/>
+        <View style={[ styles.halfCircle, styles.whiteBackground ]}/>
+      </>}
     </View>
   );
 };
