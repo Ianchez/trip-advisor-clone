@@ -97,9 +97,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   whatToKnowButton: {
-    justifyContent: 'center',
     backgroundColor: 'white',
-    width: 130,
+    width: 140,
   },
   addAPlaceButton: {
     borderColor: 'black',
