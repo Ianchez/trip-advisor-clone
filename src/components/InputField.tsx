@@ -7,10 +7,11 @@ type Props = {
   value: string;
   icon?: string;
   style?: StyleProp<ViewStyle>;
-  onChange: (text: string) => void;
+  onChange?: (text: string) => void;
+  onFocus?: () => void;
 }
 
-const InputField: React.FC<Props> = ({ placeholder, value, icon, style: propStyle, onChange }) => {
+const InputField: React.FC<Props> = ({ placeholder, value, icon, style: propStyle, onChange, onFocus }) => {
   return (
     <View style={[ styles.container, propStyle ]}>
       {icon && <Icon name={icon} size={22} color="black" />}
@@ -19,6 +20,7 @@ const InputField: React.FC<Props> = ({ placeholder, value, icon, style: propStyl
         placeholder={placeholder}
         value={value}
         onChangeText={onChange}
+        onFocus={onFocus}
       />
     </View>
   );
