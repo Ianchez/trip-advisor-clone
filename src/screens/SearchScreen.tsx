@@ -9,6 +9,7 @@ import screenStyles from '../styles/screen';
 import { PLACES_INITIAL_STATE } from '../data/places';
 
 const SearchScreen = () => {
+  const [searchValue, setSearchValue] = useState('');
   const [resentSearches, setRecentSearches] = useState<string[]>([
     'New York City',
     'Things to do in San Pedro de Atacama',
@@ -20,10 +21,12 @@ const SearchScreen = () => {
   const barsPubs = places.filter(place => place.type === 'bars&pubs');
   const getaways = places.filter(place => place.type === 'getaway');
 
+  const onChangeSearchHandler = (value: string) => setSearchValue(value);
+
   return (
     <SafeAreaView style={screenStyles.container}>
       <ScreenTitle title='Search' style={styles.separation}/>
-      <InputField placeholder='Where to?' icon={'search'} />
+      <InputField placeholder='Where to?' icon={'search'} value={searchValue} onChange={onChangeSearchHandler}/>
 
       <ScrollView
         showsVerticalScrollIndicator={false}

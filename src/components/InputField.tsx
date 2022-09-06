@@ -1,21 +1,25 @@
 import React from 'react';
-import { StyleSheet, StyleProp, TextInput, View, ViewStyle } from 'react-native';
+import { StyleSheet, StyleProp, TextInput, View, ViewStyle, NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 type Props = {
   placeholder: string;
+  value: string;
   icon?: string;
   style?: StyleProp<ViewStyle>;
+  onChange: (text: string) => void;
 }
 
-const InputField: React.FC<Props> = ({ placeholder, icon, style: propStyle }) => {
+const InputField: React.FC<Props> = ({ placeholder, value, icon, style: propStyle, onChange }) => {
   return (
     <View style={[ styles.container, propStyle ]}>
       {icon && <Icon name={icon} size={22} color="black" />}
       <TextInput
         style={styles.input}
         placeholder={placeholder}
-      ></TextInput>
+        value={value}
+        onChangeText={onChange}
+      />
     </View>
   );
 }
