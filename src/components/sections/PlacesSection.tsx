@@ -28,7 +28,7 @@ const PlacesSection: React.FC<Props> = ({ placesList, sectionTitle }) => {
               <TouchableOpacity style={styles.favPlaceButton}>
                 <Icon
                   name={iconsDictionary['Plan']}
-                  size={16}
+                  size={18}
                   color={'black'}
                   style={{ fontWeight: '900' }}
                 />
@@ -113,9 +113,9 @@ const styles = StyleSheet.create({
     fontWeight: '400',
   },
   favPlaceButton: {
-    height: 26,
-    width: 26,
-    borderRadius: 12,
+    height: 28,
+    width: 28,
+    borderRadius: 14,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',

@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     bottom: 1,
     paddingLeft: 6,
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: '500',
     color: 'lightslategrey',
   },

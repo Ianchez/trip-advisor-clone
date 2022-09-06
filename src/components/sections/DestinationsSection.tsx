@@ -52,11 +52,11 @@ const styles = StyleSheet.create({
   },
   destinationName: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: '700',
     position: 'absolute',
     bottom: 10,
-    left: 6,
+    left: 8,
   },
 });
 
