@@ -9,7 +9,7 @@ const screenStyles = StyleSheet.create({
     paddingTop: StatusBar.currentHeight || 0 + 15,
   },
   subSectionText: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: '500',
   },
 });

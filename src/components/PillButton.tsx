@@ -18,10 +18,10 @@ const PillButton: React.FC<Props> = ({ text, pillStyle, textStyle, onPress }) =>
 
 const styles = StyleSheet.create({
   pill: {
-    height: 52,
+    height: 48,
     justifyContent: 'center',
     borderWidth: 2,
-    borderRadius: 26,
+    borderRadius: 24,
     borderColor: '#e9e9e9',
     paddingHorizontal: 16,
   },

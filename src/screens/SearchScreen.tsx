@@ -35,7 +35,7 @@ const SearchScreen = () => {
       >
         {Boolean(resentSearches.length) && [
           <Text style={screenStyles.subSectionText}>Your recent searches</Text>,
-          <HorizontalPillList itemList={resentSearches}/>
+          <HorizontalPillList itemList={resentSearches} pillStyle={styles.recentSearchPills}/>
         ]}
 
         <View style={styles.separation}/>
@@ -61,6 +61,10 @@ const styles = StyleSheet.create({
   },
   doubleSeparation: {
     marginBottom: 40,
+  },
+  recentSearchPills: {
+    height: 54,
+    borderRadius: 28,
   },
 }); 
 

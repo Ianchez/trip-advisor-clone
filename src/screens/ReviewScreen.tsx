@@ -20,7 +20,7 @@ const ReviewScreen = () => {
           <Text style={styles.noReviewsTitle}>No reviews yet</Text>
           <Text>You have not written any reviews yet, get started!</Text>
           <HorizontalPillList
-            pillStyle={{ borderColor: 'black' }}
+            pillStyle={styles.reviewsPills}
             itemList={[
               'Write a review',
               'Upload a photo'
@@ -71,6 +71,10 @@ const styles = StyleSheet.create({
   noReviewsTitle: {
     ...screenStyles.subSectionText,
     marginBottom: 6,
+  },
+  reviewsPills: {
+    borderColor: 'black',
+    paddingHorizontal: 30,
   },
   writeUsAReviewContainer: {
     backgroundColor: 'black',

@@ -28,7 +28,7 @@ const PlacesSection: React.FC<Props> = ({ placesList, sectionTitle }) => {
               <TouchableOpacity style={styles.favPlaceButton}>
                 <Icon
                   name={iconsDictionary['Plan']}
-                  size={15}
+                  size={16}
                   color={'black'}
                   style={{ fontWeight: '900' }}
                 />
@@ -38,7 +38,7 @@ const PlacesSection: React.FC<Props> = ({ placesList, sectionTitle }) => {
               <Text style={styles.itemDetailTitle}>{place.title}</Text>
               <View style={{ flexDirection: 'row'}}>
                 {place.avgRating &&
-                  <RatingCircles rating={place.avgRating} circleSize={12}/>
+                  <RatingCircles rating={place.avgRating} circleSize={14}/>
                 }
                 <View style={styles.itemDetailRatingAndDistance}>
                   <Text style={styles.ratingNumber}>{place.reviewsCount}</Text>
@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   itemImg: {
-    height: 100,
-    width: 100,
+    height: 120,
+    width: 120,
     backgroundColor: 'gray',
   },
   itemDetail: {
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     paddingLeft: 16,
   },
   itemDetailTitle: {
-    fontSize: 13,
+    fontSize: 16,
     fontWeight: '500',
   },
   itemDetailRatingAndDistance: {
@@ -101,10 +101,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   ratingNumber: {
-    fontSize: 10, 
+    fontSize: 11, 
   },
   itemDetailClassification: {
-    fontSize: 11,
+    fontSize: 12,
     fontWeight: '400',
   },
   itemDetailLocation: {
@@ -113,8 +113,8 @@ const styles = StyleSheet.create({
     fontWeight: '400',
   },
   favPlaceButton: {
-    height: 24,
-    width: 24,
+    height: 26,
+    width: 26,
     borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',
