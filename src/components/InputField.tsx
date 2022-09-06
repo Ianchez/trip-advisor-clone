@@ -1,19 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, StyleProp, TextInput, View, ViewStyle } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 type Props = {
   placeholder: string;
-  icon: string;
+  icon?: string;
+  style?: StyleProp<ViewStyle>;
 }
 
-const InputField: React.FC<Props> = ({ placeholder, icon }) => {
+const InputField: React.FC<Props> = ({ placeholder, icon, style: propStyle }) => {
   return (
-    <View style={styles.container}>
-      <Icon name={icon} size={22} color="black" />
-      <Text style={styles.placeholder}>
-        {placeholder}
-      </Text>
+    <View style={[ styles.container, propStyle ]}>
+      {icon && <Icon name={icon} size={22} color="black" />}
+      <TextInput
+        style={styles.input}
+        placeholder={placeholder}
+      ></TextInput>
     </View>
   );
 }
@@ -29,13 +31,14 @@ const styles = StyleSheet.create({
     height: 40,
     paddingHorizontal: 10,
   },
-  placeholder: {
+  input: {
+    width: '100%',
     position: 'relative',
     bottom: 1,
     paddingLeft: 6,
     fontSize: 14,
     fontWeight: '500',
-    color: 'gray',
+    color: 'lightslategrey',
   },
 });
 
