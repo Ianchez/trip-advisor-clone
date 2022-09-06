@@ -5,7 +5,7 @@ const screenStyles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#fff',
-    paddingHorizontal: 15,
+    paddingHorizontal: 16,
     paddingTop: StatusBar.currentHeight || 0 + 15,
   },
   subSectionText: {

@@ -18,6 +18,7 @@ const ScreenTitle: React.FC<Props> = ({ title, style: propStyle }) => {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 15,
     width: '100%',
   },
   title: {

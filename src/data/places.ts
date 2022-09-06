@@ -27,7 +27,7 @@ export const PLACES_INITIAL_STATE = [
     type: 'attraction',
     imgURI: 'https://reactjs.org/logo-og.png',
     avgRating: 4.9,
-    reviewsCount: 404,
+    reviewsCount: 16,
     distance: 0.8,
     categories: [
       'Cooking Classes',
@@ -54,8 +54,8 @@ export const PLACES_INITIAL_STATE = [
     title: 'Cervecería HBH',
     type: 'bars&pubs',
     imgURI: 'https://reactjs.org/logo-og.png',
-    avgRating: 4.9,
-    reviewsCount: 404,
+    avgRating: 4.1,
+    reviewsCount: 140,
     distance: 0.4,
     categories: [
       '$$',
@@ -69,8 +69,8 @@ export const PLACES_INITIAL_STATE = [
     title: 'La Vinocracia',
     type: 'bars&pubs',
     imgURI: 'https://reactjs.org/logo-og.png',
-    avgRating: 4.9,
-    reviewsCount: 404,
+    avgRating: 4.2,
+    reviewsCount: 141,
     distance: 0.2,
     categories: [
       '$$',

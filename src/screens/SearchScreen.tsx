@@ -16,6 +16,10 @@ const SearchScreen = () => {
   ]);
   const [places, setPlaces] = useState<any[]>(PLACES_INITIAL_STATE);
 
+  const attractions = places.filter(place => place.type === 'attraction');
+  const barsPubs = places.filter(place => place.type === 'bars&pubs');
+  const getaways = places.filter(place => place.type === 'getaway');
+
   return (
     <SafeAreaView style={screenStyles.container}>
       <ScreenTitle title='Search' style={styles.separation}/>
@@ -32,13 +36,13 @@ const SearchScreen = () => {
         ]}
 
         <View style={styles.separation}/>
-        <PlacesSection placesList={places} sectionTitle='Attractions nearby'/>
+        <PlacesSection placesList={attractions} sectionTitle='Attractions nearby'/>
         <View style={styles.doubleSeparation}/>
-        <PlacesSection placesList={places} sectionTitle='Bars & Pubs nearby'/>
+        <PlacesSection placesList={barsPubs} sectionTitle='Bars & Pubs nearby'/>
         <View style={styles.doubleSeparation}/>
-        <PlacesSection placesList={places} sectionTitle='Weekends getaway'/>
+        <PlacesSection placesList={getaways} sectionTitle='Weekends getaway'/>
         <View style={styles.doubleSeparation}/>
-        <DestinationsSection destinationsList={places} sectionTitle='Destinations travelers love' />
+        <DestinationsSection destinationsList={getaways} sectionTitle='Destinations travelers love' />
       </ScrollView>
     </SafeAreaView>
   );
