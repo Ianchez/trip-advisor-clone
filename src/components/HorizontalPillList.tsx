@@ -4,12 +4,13 @@ import PillButton from './PillButton';
 
 type Props = {
   itemList: string[],
+  itemActions?: any[],
   containerStyle?: StyleProp<ViewStyle>;
   pillStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
 }
 
-const HorizontalPillList: React.FC<Props> = ({ itemList, containerStyle, pillStyle, textStyle }) => {
+const HorizontalPillList: React.FC<Props> = ({ itemList, itemActions, containerStyle, pillStyle, textStyle }) => {
   return (
     <ScrollView
       horizontal
@@ -19,7 +20,12 @@ const HorizontalPillList: React.FC<Props> = ({ itemList, containerStyle, pillSty
     >
       {itemList.map((item, index) =>
         <>
-          <PillButton text={item} pillStyle={pillStyle} textStyle={textStyle}/>
+          <PillButton
+            text={item}
+            pillStyle={pillStyle}
+            textStyle={textStyle}
+            onPress={itemActions && itemActions[index]}
+          />
           {index !== (itemList.length - 1) && // Avoid space at the end
             <View style={styles.spaceBetween}/>
           }
