@@ -40,6 +40,7 @@ const SearchScreen = ({ navigation }) => {
         setActive={setSearchSectionActiveHandler}
         places={places}
         resentSearches={resentSearches}
+        onPressItemHandler={onPressItemHandler}
       />
 
       {!searchSection && <>

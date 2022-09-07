@@ -13,9 +13,10 @@ type Props = {
   setActive: (active: boolean) => void;
   places: Place[];
   resentSearches: IRecentSearch[];
+  onPressItemHandler: (place: Place) => void;
 }
 
-const SearchSection: React.FC<Props> = ({ active, setActive, places, resentSearches }) => {
+const SearchSection: React.FC<Props> = ({ active, setActive, places, resentSearches, onPressItemHandler }) => {
   const [searchValue, setSearchValue] = useState('');
 
   const onChangeSearchHandler = (value: string) => setSearchValue(value);
@@ -45,7 +46,7 @@ const SearchSection: React.FC<Props> = ({ active, setActive, places, resentSearc
         <PlacesRecentSearchList resentSearches={resentSearches} places={places}/>
       }
       {active && searchValue &&
-        <PlacesSearchResultList placesList={places} searchValue={searchValue} />
+        <PlacesSearchResultList placesList={places} searchValue={searchValue} onPressItemHandler={onPressItemHandler}/>
       }
     </>
   )

@@ -6,9 +6,10 @@ import { Place } from '../../models/dataTypes';
 interface Props {
   placesList: Place[];
   searchValue: string;
+  onPressItemHandler: (place: Place) => void;
 };
 
-const PlacesSearchResultList: React.FC<Props> = ({ placesList, searchValue }) => {
+const PlacesSearchResultList: React.FC<Props> = ({ placesList, searchValue, onPressItemHandler }) => {
   const filteredList =
     placesList.filter(place =>
       place.title.toLowerCase().includes(searchValue.toLocaleLowerCase()) ||
@@ -23,7 +24,7 @@ const PlacesSearchResultList: React.FC<Props> = ({ placesList, searchValue }) =>
       style={styles.scrollContainer}
     >
       {filteredList.map(place => 
-        <TouchableOpacity key={`search-result-list-item-${place.id}`} style={styles.resultItem}>
+        <TouchableOpacity key={`search-result-list-item-${place.id}`} style={styles.resultItem} onPress={() => onPressItemHandler(place)}>
           <Image
             source={{ uri: place.imgURI }}
             style={[ styles.resultImage, place.imgURI ? styles.blackBackground : {} ]}
