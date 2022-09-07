@@ -4,12 +4,14 @@ import { Image, StyleSheet, Text, TouchableWithoutFeedback, TouchableOpacity, Vi
 
 import { Place } from '../models/dataTypes';
 import { PillButton, RatingCircles, ScreenTitle } from '../components';
+import WriteAReviewScreen from './WriteAReviewScreen';
 
 const PlaceDetailScreen = ({ route, navigation }) => {
   const place: Place | undefined = route?.params?.place;
   if (!place) { return }
 
   const onPressRatingHandler = () => navigation.navigate('ReviewsList', { placeId: place.id });
+  const onPressWriteAReviewHandler = () => navigation.navigate('WriteAReview', { place });
 
   return (
     <SafeAreaView>
@@ -46,7 +48,7 @@ const PlaceDetailScreen = ({ route, navigation }) => {
               <Text style={styles.links}>Visit website</Text>
             </TouchableWithoutFeedback>
           </View>
-          <TouchableWithoutFeedback style={{ width: 100 }} onPress={() => console.log('Write a review!')}>
+          <TouchableWithoutFeedback style={{ width: 100 }} onPress={onPressWriteAReviewHandler}>
             <Text style={styles.links}>Write a review</Text>
           </TouchableWithoutFeedback>
         </View>

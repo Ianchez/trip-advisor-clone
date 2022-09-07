@@ -4,6 +4,7 @@ import PlanScreen from "./PlanScreen";
 import PlaceDetailScreen from "./PlaceDetailScreen";
 import ReviewScreen from "./ReviewScreen";
 import ReviewsListScreen from "./ReviewsListScreen";
+import WriteAReviewScreen from "./WriteAReviewScreen";
 
 export {
   ExploreScreen,
@@ -12,4 +13,5 @@ export {
   PlaceDetailScreen,
   ReviewScreen,
   ReviewsListScreen,
+  WriteAReviewScreen,
 };
