@@ -11,13 +11,13 @@ interface Props {
 
 const PlacesRecentSearchList: React.FC<Props> = ({ resentSearches, places }) => {
   return (
-    <TouchableOpacity>
+    <View>
       <View style={styles.doubleSeparation}/>
       <Text style={styles.recentSubTitle}>RECENT</Text>
       {resentSearches.reverse().map((recent, index) => {
         const place = places.find(place => place.id === recent.placeId);
         return (
-          <View key={`recent-search-list-item-${index}`} style={styles.recentListItem}>
+          <TouchableOpacity key={`recent-search-list-item-${index}`} style={styles.recentListItem}>
             <Image source={{ uri: place?.imgURI || '' }} style={styles.recentImage} />
             <View>
               <Text>{recent.searchString}</Text>
@@ -25,10 +25,10 @@ const PlacesRecentSearchList: React.FC<Props> = ({ resentSearches, places }) => 
                 <Text style={styles.placeLocation}>{place.location}</Text>
               }
             </View>
-          </View>
+          </TouchableOpacity>
         );
       })}
-    </TouchableOpacity>
+    </View>
   );
 }
 
