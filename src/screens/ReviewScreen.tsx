@@ -5,7 +5,9 @@ import { HorizontalPillList, PillButton, ScreenTitle } from '../components/';
 
 import screenStyles from '../styles/screen';
 
-const ReviewScreen = () => {
+const ReviewScreen = ({ navigation }) => {
+  const onPressWriteAReviewHandler = () => navigation.navigate('WriteAReview', { place: null });
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
@@ -24,6 +26,9 @@ const ReviewScreen = () => {
             itemList={[
               'Write a review',
               'Upload a photo'
+            ]}
+            itemActions={[
+              onPressWriteAReviewHandler,
             ]}
           />
         </View>

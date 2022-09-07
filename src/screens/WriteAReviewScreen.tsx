@@ -10,7 +10,6 @@ import screenStyles from '../styles/screen';
 
 const WriteAReviewScreen = ({ route, navigation }) => {
   const place: Place = route.params.place;
-  if (!place) return;
 
   const [rating, setRating] = useState<string>('');
   const [reviewContent, setReviewContent] = useState<string>('');
@@ -28,9 +27,11 @@ const WriteAReviewScreen = ({ route, navigation }) => {
   return (
     <SafeAreaView style={screenStyles.container}>
       <View>
-        <Text>{place.title}</Text>
-        <Text>{place.location}</Text>
-        <View style={styles.doubleSeparation}/>
+        {place && <>
+          <Text>{place.title}</Text>
+          <Text>{place.location}</Text>
+          <View style={styles.doubleSeparation}/>
+        </>}
 
         <Text>How would you rate your experience?</Text>
         <TextInput

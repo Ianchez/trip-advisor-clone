@@ -1,5 +1,6 @@
 import { createBottomTabNavigator, BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 import SearchNavigator from './SearchNavigator';
+import ReviewNavigator from './ReviewNavigator';
 
 import {
   ExploreScreen,
@@ -43,7 +44,7 @@ const TabNavigator = () => (
     <Tab.Screen name="Explore" component={ExploreScreen} />
     <Tab.Screen name="Search" component={SearchNavigator} />
     <Tab.Screen name="Plan" component={PlanScreen} />
-    <Tab.Screen name="Review" component={ReviewScreen} />
+    <Tab.Screen name="Review" component={ReviewNavigator} />
   </Tab.Navigator>
 );
 
