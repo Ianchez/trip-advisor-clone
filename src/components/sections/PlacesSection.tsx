@@ -5,12 +5,15 @@ import { iconsDictionary } from './../../utils/icons';
 import screenStyles from '../../styles/screen';
 import RatingCircles from '../RatingCircles';
 
+import { Place } from '../../models/dataTypes';
+
 type Props = {
-  placesList: any[],
-  sectionTitle: string
+  placesList: any[];
+  sectionTitle: string;
+  onPressItem: (place: Place) => void;
 }
 
-const PlacesSection: React.FC<Props> = ({ placesList, sectionTitle }) => {
+const PlacesSection: React.FC<Props> = ({ placesList, sectionTitle, onPressItem }) => {
   return (
     <>
       <View style={styles.header}>
@@ -19,7 +22,7 @@ const PlacesSection: React.FC<Props> = ({ placesList, sectionTitle }) => {
       </View>
       {placesList.map((place, index) =>
         <>
-          <TouchableOpacity style={styles.item}>
+          <TouchableOpacity style={styles.item} onPress={() => onPressItem(place)}>
             <View style={styles.itemImg}>
               <Image
                 source={{ uri: place.imgURI }}
@@ -48,7 +51,7 @@ const PlacesSection: React.FC<Props> = ({ placesList, sectionTitle }) => {
                 </View>
               </View>
               {place.categories && 
-                <Text style={styles.itemDetailClassification}>{place.categories.join(' | ')}</Text>
+                <Text style={styles.itemDetailClassification}>{place.categories.join(' 🞄 ')}</Text>
               }
               {place.location && 
                 <Text style={styles.itemDetailLocation}>{place.location}</Text>
