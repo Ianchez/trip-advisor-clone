@@ -9,3 +9,14 @@ export interface Place {
   categories?: string[];
   location?: string;
 };
+
+export interface IReview {
+  id: number;
+  placeId: number;
+  author: string;
+  rating: number;
+  reviewTitle: string;
+  reviewContent: string;
+  date: string;
+  likes: number;
+}
